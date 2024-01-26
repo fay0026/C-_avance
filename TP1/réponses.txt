@@ -14,4 +14,11 @@ Oui, car le programme appelle le destructeur de toutes les instances en fin de m
 
 Sans autre modification, remplacez le pointeur sur Thief par un pointeur sur Player. Cette classe est donc utilisée à présent dans un contexte polymorphe.
 Quelles sont les conditions à vérifier pour cela ? L'objet créé dynamiquement est-il bien détruit en sortie ? Sinon expliquez pourquoi et corrigez votre code.
+
 Que les destructeurs sont bien virtuels premièrement, l'objet n'étais pas détruit en sortis car, à delete thief, thief étant de type Player *, seul le destructeur de cette classe était appeller.
+
+
+Ajoutez le constructeur prenant en paramètre un flux d'entrée std::istream dans Player de manière à lire la valeur des 3 attributs dans l'ordre donné dans le
+diagramme de classes. Notez que l'ajout de ce constructeur empêche la création de l'objet de l'exercice précédent. Pourquoi ? Mettez le code en commentaire pour permettre la compilation.
+
+Le constructeur par défaut de Thief, à été implicitement supprimé car le constructeur de player ( dont il hérite ) n'est plus un cosntructeur par défaut.

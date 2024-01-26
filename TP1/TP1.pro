@@ -17,4 +17,4 @@ HEADERS += \
     wizard.h
 
 DISTFILES += \
-    réponses
+    réponses.txt

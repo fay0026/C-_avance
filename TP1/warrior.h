@@ -5,6 +5,7 @@
 class Warrior: public Player
 {
 public:
+    Warrior(std::istream &);
 };
 
 #endif // WARRIOR_H

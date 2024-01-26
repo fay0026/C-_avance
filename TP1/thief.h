@@ -7,9 +7,10 @@ class Thief: public Player
 private:
     char skill;
 public:
-    virtual ~Thief();
-    const char & getSkill()const;
-    bool isAlive()const;
+    Thief(std::istream &);
+    //~Thief();
+    char getSkill()const;
+    //virtual bool isAlive()const;
 
 };
 

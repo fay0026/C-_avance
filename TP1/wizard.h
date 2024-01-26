@@ -5,6 +5,7 @@
 class Wizard: public Player
 {
 public:
+    Wizard(std::istream &);
 };
 
 #endif // WIZARD_H
