@@ -1,0 +1,8 @@
+Avec cette implémentation minimale sans aucun constructeur, est-il possible de créer par exemple une instance de Thief ? Pourquoi ?
+
+Oui, car il existe des constructeurs par défaut
+
+Sans ajouter aucune nouvelle méthode pouvez-vous rendre la classe Player abstraite ? Si oui faites-le. Comment vérifier que Player est abstraite ? Faites cette vérification dans la fonction main.
+
+En rendant une méthode existante virtuelle pure, oui. En essayant de créer une instance de cette classe, si elle est abstraite ce sera impossible
+

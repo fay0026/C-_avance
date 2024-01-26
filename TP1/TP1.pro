@@ -4,4 +4,17 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        player.cpp \
+        thief.cpp \
+        warrior.cpp \
+        wizard.cpp
+
+HEADERS += \
+    player.h \
+    thief.h \
+    warrior.h \
+    wizard.h
+
+DISTFILES += \
+    réponses

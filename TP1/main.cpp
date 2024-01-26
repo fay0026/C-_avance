@@ -1,9 +1,10 @@
 #include <iostream>
-
+#include <player.h>
+#include <thief.h>
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!" << endl;
-    return 0;
+   Thief thief;
+   return 0;
 }
