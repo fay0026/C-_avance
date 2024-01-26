@@ -5,6 +5,8 @@ using namespace std;
 
 int main()
 {
-   Thief thief;
+   Player * thief = new Thief();
+   thief->isAlive();
+   delete thief;
    return 0;
 }

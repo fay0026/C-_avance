@@ -9,6 +9,7 @@ private:
     int strength;
     int lives;
 public:
+    virtual ~Player();
     const std::string & getName()const;
     int getStrength()const;
     int getLives()const;
