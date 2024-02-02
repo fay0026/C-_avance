@@ -11,6 +11,11 @@ public:
     //~Thief();
     char getSkill()const;
     //virtual bool isAlive()const;
+    virtual std::ostream & write(std::ostream&)const;
+    bool fight(const Wizard &)const;
+    bool fight(const Warrior &)const;
+    bool fight(const Thief &)const;
+    bool operator>(const Player&) const;
 
 };
 

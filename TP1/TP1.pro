@@ -8,13 +8,16 @@ SOURCES += \
         player.cpp \
         thief.cpp \
         warrior.cpp \
-        wizard.cpp
+        wizard.cpp \
+        writable.cpp
 
 HEADERS += \
     player.h \
     thief.h \
     warrior.h \
-    wizard.h
+    wizard.h \
+    writable.h
 
 DISTFILES += \
+    personnages.txt \
     réponses.txt

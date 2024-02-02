@@ -12,6 +12,11 @@ char Thief::getSkill() const{
     return this->skill;
 }
 
+std::ostream & Thief::write(std::ostream& os)const {
+    os << "Thief ";
+    return Player::write(os)<<" "<<this->skill;
+}
+
 /*
 Thief::~Thief() {
     cout << "Voleur DCD" << endl;

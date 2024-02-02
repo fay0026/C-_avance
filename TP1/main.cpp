@@ -1,12 +1,14 @@
 #include <iostream>
 #include <player.h>
 #include <thief.h>
+#include <wizard.h>
+#include <warrior.h>
 #include <vector>
 #include <fstream>
 
 using namespace std;
 
-void loadPlayers(string, vector<Player*>)  throw (invalid_argument);
+void loadPlayers(string, vector<Player*>&)  throw (invalid_argument);
 
 int main()
 {
@@ -15,11 +17,20 @@ int main()
    thief->isAlive();
    delete thief;
    */
-
+    vector<Player*> players;
+    loadPlayers("personnages.txt",players);
+    cout << "Nombres joueurs : "<<players.size() <<endl;
+    for (int i=0;i<players.size();i++) {
+        cout << "Joueur "<<i<<" -> "<< *players[i] <<endl;
+    }
+    //Destruction
+    for (int i=0;i<players.size();i++) {
+        delete players[i];
+    }
    return 0;
 }
 
-void loadPlayers(string filename, vector<Player*> players) throw (invalid_argument) {
+void loadPlayers(string filename, vector<Player*> &players) throw (invalid_argument) {
     // ouverture du fichier
     ifstream in(filename.c_str());
     // protection ouverture
@@ -30,18 +41,25 @@ void loadPlayers(string filename, vector<Player*> players) throw (invalid_argume
     do {
         // lecture du code
         in >> code;
+        Player* ply;
         switch (code)
         {
-            case '1':
-                Wizard wiz = new Wizard();
+            case 1: {
+                Wizard* ply = new Wizard(in);
+                players.push_back(ply);
                 break;
-            case '2':
+            }
+            case 2: {
+                Warrior* ply = new Warrior(in);
+                players.push_back(ply);
                 break;
-            case '3':
+                }
+            case 3: {
+                Thief* ply = new Thief(in);
+                players.push_back(ply);
                 break;
+                }
         }
-
-
     }
     while ( code != 0);
     // fermeture du fichier
