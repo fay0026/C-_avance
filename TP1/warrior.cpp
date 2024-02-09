@@ -12,23 +12,24 @@ std::ostream & Warrior::write(std::ostream& os)const{
 
 //Pour les combats, si le paramètre a gagné, on retourne vrai
 // Wiz > War
-bool Warrior::fight(const Wizard & wiz)const {
-    return this->getStrength()+10<wiz.getStrength();
+bool Warrior::fight(const Wizard* wiz)const {
+    return this->getStrength()+10<wiz->getStrength();
 }
 
 // War > War
-bool Warrior::fight(const Warrior & war)const {
+bool Warrior::fight(const Warrior* war)const {
+    return this->getStrength() < war->getStrength();
 }
 
 // Thief > War
-bool Warrior::fight(const Thief & th )const {
+bool Warrior::fight(const Thief* th )const {
     bool ret = false;
-    if (th.getSkill == 'A') {
-        ret = this->getStrength() < th.getStrength();
-    } else if (th.getSkill == 'B') {
-        ret = this->getStrength()+5 < th.getStrength();
+    if (th->getSkill() == 'A') {
+        ret = this->getStrength() < th->getStrength();
+    } else if (th->getSkill() == 'B') {
+        ret = this->getStrength()+5 < th->getStrength();
     } else {
-        ret = this->getStrength()+10 < th.getStrength();
+        ret = this->getStrength()+10 < th->getStrength();
     }
     return ret;
 }

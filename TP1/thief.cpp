@@ -19,26 +19,26 @@ std::ostream & Thief::write(std::ostream& os)const {
 
 //Pour les combats, si le paramètre a gagné, on retourne vrai
 // Wiz > Thief
-bool Thief::fight(const Wizard & wiz)const {
+bool Thief::fight(const Wizard* wiz)const {
     return true;
 }
 
 // War > Thief
-bool Thief::fight(const Warrior & war)const {
+bool Thief::fight(const Warrior* war)const {
     return true;
 }
 
 // Thief > Thief
-bool Thief::fight(const Thief & th )const {
+bool Thief::fight(const Thief* th )const {
     bool ret = false;
     if (this->skill == 'A') {
         ret = true;
     } else if (this->skill == 'B') {
-        if (th.getSkill() != 'A') {
+        if (th->getSkill() != 'A') {
             ret = true;
         }
     } else {
-        if (th.getSkill() == 'C') {
+        if (th->getSkill() == 'C') {
             ret = true;
         }
     }
@@ -48,22 +48,6 @@ bool Thief::fight(const Thief & th )const {
 bool Thief::operator>(const Player& p) const {
     return p.fight(this);
 }
-
-Player& Player::clone(Player& p) {
-    Thief p = *this;
-    return p;
-}
-
-
-/*Player& Thief::operator--() {
-    this->lives -= 1;
-    return *this;
-}*/
-
-/* Player Thief::operator--(int) {
-    Thief P = *this;
-    return P;
-} */
 
 /*
 Thief::~Thief() {

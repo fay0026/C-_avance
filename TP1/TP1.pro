@@ -4,6 +4,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        clonable.cpp \
         main.cpp \
         player.cpp \
         thief.cpp \
@@ -12,6 +13,7 @@ SOURCES += \
         writable.cpp
 
 HEADERS += \
+    clonable.h \
     player.h \
     thief.h \
     warrior.h \

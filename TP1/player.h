@@ -1,6 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "writable.h"
+#include "clonable.h"
 #include<string>
 #include<iostream>
 
@@ -9,7 +10,7 @@ class Wizard;
 class Warrior;
 class Thief;
 
-class Player: public Writable{
+class Player: public Writable, public Clonable {
     // ici on peut déclarer des Wizard* Warrior* ou Thief*
 private:
     std::string name;
@@ -23,13 +24,12 @@ public:
     int getStrength()const;
     int getLives()const;
     bool isAlive()const;
+    virtual bool fight(const Wizard*)const =0;
+    virtual bool fight(const Warrior*)const =0;
+    virtual bool fight(const Thief*)const =0;
     //virtual bool isAlive()const =0;
     virtual bool operator>(const Player&) const = 0;
-    // virtual Player& Player::operator--()const = 0;
-    // virtual Player Player::operator--(int) = 0;
     Player& operator--();
-    Player& operator--(int);
-    virtual Player& clone(Player&)=0;
 };
 
 #endif // PLAYER_H

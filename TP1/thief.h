@@ -1,6 +1,8 @@
 #ifndef THIEF_H
 #define THIEF_H
 #include "player.h"
+#include "warrior.h"
+#include "wizard.h"
 
 class Thief: public Player
 {
@@ -12,11 +14,10 @@ public:
     char getSkill()const;
     //virtual bool isAlive()const;
     virtual std::ostream & write(std::ostream&)const;
-    bool fight(const Wizard &)const;
-    bool fight(const Warrior &)const;
-    bool fight(const Thief &)const;
+    bool fight(const Wizard*)const;
+    bool fight(const Warrior*)const;
+    bool fight(const Thief*)const;
     bool operator>(const Player&) const;
-    // Player operator--(int);
 };
 
 #endif // THIEF_H

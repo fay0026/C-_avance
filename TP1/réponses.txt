@@ -1,24 +1,31 @@
 Avec cette implémentation minimale sans aucun constructeur, est-il possible de créer par exemple une instance de Thief ? Pourquoi ?
 
-Oui, car il existe des constructeurs par défaut
+- Oui, car il existe des constructeurs par défaut
 
 Sans ajouter aucune nouvelle méthode pouvez-vous rendre la classe Player abstraite ? Si oui faites-le. Comment vérifier que Player est abstraite ? Faites cette vérification dans la fonction main.
 
-En rendant une méthode existante virtuelle pure, oui. En essayant de créer une instance de cette classe, si elle est abstraite ce sera impossible
+- En rendant une méthode existante virtuelle pure, oui. En essayant de créer une instance de cette classe, si elle est abstraite ce sera impossible
 
 Que se passe-t-il si on essaie de créer dans la fonction main une instance de Thief ?
-Thief est abstraite car n'implémente pas la méthode abstraite de Player, et donc elle ne peut être instancier.
+
+- Thief est abstraite car n'implémente pas la méthode abstraite de Player, et donc elle ne peut être instancier.
 
 Exécutez le programme. L'objet créé est-il bien détruit en sortie ? Pourquoi ?
-Oui, car le programme appelle le destructeur de toutes les instances en fin de main.
+
+- Oui, car le programme appelle le destructeur de toutes les instances en fin de main.
 
 Sans autre modification, remplacez le pointeur sur Thief par un pointeur sur Player. Cette classe est donc utilisée à présent dans un contexte polymorphe.
 Quelles sont les conditions à vérifier pour cela ? L'objet créé dynamiquement est-il bien détruit en sortie ? Sinon expliquez pourquoi et corrigez votre code.
 
-Que les destructeurs sont bien virtuels premièrement, l'objet n'étais pas détruit en sortis car, à delete thief, thief étant de type Player *, seul le destructeur de cette classe était appeller.
+- Car les destructeurs sont bien virtuels premièrement, l'objet n'étais pas détruit en sortis car, à delete thief, thief étant de type Player *, seul le destructeur de cette classe était appeller.
 
 
 Ajoutez le constructeur prenant en paramètre un flux d'entrée std::istream dans Player de manière à lire la valeur des 3 attributs dans l'ordre donné dans le
 diagramme de classes. Notez que l'ajout de ce constructeur empêche la création de l'objet de l'exercice précédent. Pourquoi ? Mettez le code en commentaire pour permettre la compilation.
 
-Le constructeur par défaut de Thief, à été implicitement supprimé car le constructeur de player ( dont il hérite ) n'est plus un cosntructeur par défaut.
+- Le constructeur par défaut de Thief, à été implicitement supprimé car le constructeur de player ( dont il hérite ) n'est plus un cosntructeur par défaut.
+
+Supposons que l'on veuille dupliquer le vector contenant les instances de Player. Quand on désire fournir la possibilité de copier un objet,
+en général on pense à utiliser un constructeur par copie. Pourquoi cette approche est-elle peu satisfaisante dans le cadre du polymorphisme ?
+
+- Car les attributs des instances filles contenues dans le vecteur peuvent être copiées, mais les attributs de l'instance mère sont inaccessibles.
