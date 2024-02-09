@@ -49,11 +49,6 @@ bool Thief::operator>(const Player& p) const {
     return p.fight(this);
 }
 
-/*
-Thief::~Thief() {
-    cout << "Voleur DCD" << endl;
+Clonable* clone() const{
+    return *this;
 }
-bool Thief::isAlive()const {
-    return this->Player::isAlive();
-}
-*/

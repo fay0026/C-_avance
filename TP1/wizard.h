@@ -9,6 +9,7 @@ class Wizard: public Player
 public:
     Wizard(std::istream &);
     virtual std::ostream & write(std::ostream&)const;
+    virtual Clonable* clone()const;
     bool fight(const Wizard*)const;
     bool fight(const Warrior*)const;
     bool fight(const Thief*)const;

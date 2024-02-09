@@ -23,17 +23,8 @@ void testClone() {
 
 int main()
 {
-    /*
-   Player * thief = new Thief();
-   thief->isAlive();
-   delete thief;
-   */
     vector<Player*> players;
     loadPlayers("personnages.txt",players);
-    /*cout << "Nombres joueurs : "<<players.size() <<endl;
-    for (int i=0;i<players.size();i++) {
-        cout << "Joueur "<<i<<" -> "<< *players[i] <<endl;
-    }*/
     testClone();
     //Destruction
     for (int i=0;i<players.size();i++) {
@@ -48,19 +39,10 @@ void fight(int *tour, vector<Player*> &players, int *vivants) {
     int c1 = rand() % players.size();
     while (!players[c1]->isAlive()) {
         c1 = rand() % players.size();
-        // cout << "C1 GET BACK IN ORDER" << endl;
     }
     int c2 = rand() % players.size();
     while (!players[c2]->isAlive() || players[c1] == players[c2]) {
         c2 = rand() % players.size();
-        // cout << "C2 GET BACK IN ORDER" << endl;
-        /*
-        cout << *players[c2] << endl;
-        cout << *players[c1] << endl;
-        cout << (c1 == c2) << endl;
-        cout << (!players[c2]->isAlive()) << endl;
-        cout << (!players[c2]->isAlive() || players[c1] == players[c2]) << endl;
-        sleep_for(nanoseconds(1000000000));*/
     }
     if (c1 > c2) {
         cout << *players[c2] << endl;
