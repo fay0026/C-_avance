@@ -25,6 +25,11 @@ public:
     bool isAlive()const;
     //virtual bool isAlive()const =0;
     virtual bool operator>(const Player&) const = 0;
+    // virtual Player& Player::operator--()const = 0;
+    // virtual Player Player::operator--(int) = 0;
+    Player& operator--();
+    Player& operator--(int);
+    virtual Player& clone(Player&)=0;
 };
 
 #endif // PLAYER_H

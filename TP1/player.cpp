@@ -32,6 +32,24 @@ bool Player::isAlive()const {
     return this->lives>0;
 }
 
-bool Player::operator>(const Player&)const {
+bool Player::operator>(const Player&)const {}
 
+// Player& Player::operator--()const{}
+
+/* Player& Player::operator--() {
+    this->lives -= 1;
+    return *this;
+} */
+
+Player& Player::operator--(int) {
+    this->lives -= 1;
+    return *this;
 }
+
+Player& Player::operator--(int) {
+    Player P = *this;
+    this->lives -= 1;
+    return P;
+}
+
+Player& Player::clone(Player&) {}

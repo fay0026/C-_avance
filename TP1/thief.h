@@ -16,7 +16,7 @@ public:
     bool fight(const Warrior &)const;
     bool fight(const Thief &)const;
     bool operator>(const Player&) const;
-
+    // Player operator--(int);
 };
 
 #endif // THIEF_H
