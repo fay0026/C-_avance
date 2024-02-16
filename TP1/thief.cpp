@@ -48,7 +48,3 @@ bool Thief::fight(const Thief* th )const {
 bool Thief::operator>(const Player& p) const {
     return p.fight(this);
 }
-
-Clonable* clone() const{
-    return *this;
-}

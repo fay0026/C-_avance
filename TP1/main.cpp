@@ -15,7 +15,6 @@ void loadPlayers(string, vector<Player*>&)  throw (invalid_argument);
 void testClone() {
     Wizard* w = new Wizard(cin); // création par saisie au clavier
     cout << *w << endl;
-    Wizard* c = w->clone(); // clonage
     cout << *c << endl;
     delete c;
     delete w;
@@ -25,7 +24,6 @@ int main()
 {
     vector<Player*> players;
     loadPlayers("personnages.txt",players);
-    testClone();
     //Destruction
     for (int i=0;i<players.size();i++) {
         delete players[i];

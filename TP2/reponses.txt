@@ -1,0 +1,15 @@
+III.1
+4 1
+5 0
+6 1
+7 1
+8 0
+9 1
+10 0
+11 0
+
+III.2
+4.)
+Quelle est l'utilité de l'instruction using Calendar::Day; ? Est-ce une directive using ou une déclaration using ?
+L'instruction sert à se placer dans l'espace de nommage Calendar et d'accéder à la classe Day. C'est une directive using.
+

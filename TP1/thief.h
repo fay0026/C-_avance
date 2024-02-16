@@ -14,6 +14,7 @@ public:
     char getSkill()const;
     //virtual bool isAlive()const;
     virtual std::ostream & write(std::ostream&)const;
+    virtual Clonable* clone()const;
     bool fight(const Wizard*)const;
     bool fight(const Warrior*)const;
     bool fight(const Thief*)const;
